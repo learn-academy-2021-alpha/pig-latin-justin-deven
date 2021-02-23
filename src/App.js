@@ -24,6 +24,13 @@ class App extends Component {
 
     // now that we have an array of words, we can map over the array and access each word
     let translatedWordsArray = userInput.map(currentWord => {
+      if (currentWord.findIndexOf(vowelsArray) === 0){
+        return `${currentWord}way`
+      }else if(currentWord.findIndexOf(vowelsArray)!== 0){
+        //if the first index is not a vowel then search the rest of the word for the first vowel
+        return currentWord.search(/[a,e,i,o,u]/i)
+      }
+
       // ACTION ITEM: use "currentWord" as a starting point for your code
       console.log("currentWord:", currentWord)
 
@@ -40,7 +47,34 @@ class App extends Component {
       // ACTION ITEM: change the value of currentWord to the name of whatever variable you made containing your Pig Latin'd word
       return currentWord
     })
+      // let consonantsArray = currentWord.split("").filter( consonant => {
+  //   return consonant !== "a" || consonant !== "e" || consonant !== "i" || consonant !== "o" || consonant !== "u"
+  // })
+  // console.log("consonantsArray:", consonantsArray) // ["t","y","s","q","f"]
 
+  // if consonant iterate over string of words and identify first vowel, everything in string will be moved or pushed to end of array
+  // shift every index number before the first vowel, now those are gone and starts with the first vowel
+ 
+  // userInput = ["alpha", "through" , "yummy" , "squeal", "queen", fry"]
+  
+  // translatedWordsArray: ["a","t","y","s","q","f"]
+
+  // vowelsArray: ["a"] 
+
+  // want - (+ will be joined by translatedWords["lpha"] + .push["way"])
+
+  
+
+  // expected Outcome = [" 'a','l','p','h','a','w','a', 'y' " , " 'o','u','g','h','t','h','r','a','y' ", "'u','m','m','y','y','a','y' " , "'u','e','a','l','s','q','a','y' ", "'e','e','n','q','u','a','y' ", " 'y','f','r','a','y' " ]
+
+  // expected Outcome = ["alphaway", "oughthray", "ummyyay", "uealsqay", "eenquay", "yfray" ]
+
+  // your code here!
+
+  // Remember: console.log is your friend :)
+
+
+  // ACTION ITEM: change the value of currentWord to the name of whatever variable you made containing your Pig Latin'd word
 
     // joining the array back to a string of translated words
     // no need to change this variable
