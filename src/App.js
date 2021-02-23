@@ -19,19 +19,49 @@ class App extends Component {
   myPigLatinCodeHere = () => {
     // the variable "userInput" will contain the text input from the user modified into an array of words
     // no need to change this variable
-    let userInput = this.state.phrase.split(" ")
-    console.log("userInput:", userInput)
+    let userInput = this.state.phrase.split(" ") 
+    console.log("userInput:", userInput) // userInput = ["alpha", "through" , "yummy" , "squeal", "queen", fry"]
 
+    // already split words into array of single letters
+    
     // now that we have an array of words, we can map over the array and access each word
     let translatedWordsArray = userInput.map(currentWord => {
         //mapping the strings and taking out the indexes so that we may be able to analyze further
-        return
-      console.log("currentWord:", currentWord)
+        // map to access each word... what are we accessing? index of the first vowel aka ID the first vowel
+        // if index [0] = 
+
+        if/ 
+       return currentWord.substring(0,)
+        })
+      console.log("currentWord:", currentWord) // ["a","t","y","s","q","f"]
 
       let vowelsArray = currentWord.split("").filter(vowel => {
         return vowel === "a" || vowel === "e" || vowel === "i" || vowel === "o" || vowel === "u"
+  
       })
-      console.log("vowelsArray:", vowelsArray)
+      console.log("vowelsArray:", vowelsArray)  // ["a"]
+
+      let consonantsArray = currentWord.split("").filter( consonant => {
+        return consonant !== "a" || consonant !== "e" || consonant !== "i" || consonant !== "o" || consonant !== "u"
+      })
+      console.log("consonantsArray:", consonantsArray) // ["t","y","s","q","f"]
+
+      // if consonant iterate over string of words and identify first vowel, everything in string will be moved or pushed to end of array
+      // shift every index number before the first vowel, now those are gone and starts with the first vowel
+     
+      // userInput = ["alpha", "through" , "yummy" , "squeal", "queen", fry"]
+      
+      // translatedWordsArray: ["a","t","y","s","q","f"]
+
+      // vowelsArray: ["a"] 
+
+      // want - (+ will be joined by translatedWords["lpha"] + .push["way"])
+
+      
+
+      // expected Outcome = [" 'a','l','p','h','a','w','a', 'y' " , " 'o','u','g','h','t','h','r','a','y' ", "'u','m','m','y','y','a','y' " , "'u','e','a','l','s','q','a','y' ", "'e','e','n','q','u','a','y' ", " 'y','f','r','a','y' " ]
+
+      // expected Outcome = ["alphaway", "oughthray", "ummyyay", "uealsqay", "eenquay", "yfray" ]
 
       // your code here!
 
@@ -39,8 +69,8 @@ class App extends Component {
 
 
       // ACTION ITEM: change the value of currentWord to the name of whatever variable you made containing your Pig Latin'd word
-      return currentWord
-    })
+      return currentWord.push()
+    }
 
 
     // joining the array back to a string of translated words
