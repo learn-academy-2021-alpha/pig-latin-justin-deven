@@ -24,7 +24,8 @@ class App extends Component {
 
     // now that we have an array of words, we can map over the array and access each word
     let translatedWordsArray = userInput.map(currentWord => {
-      // ACTION ITEM: use "currentWord" as a starting point for your code
+        //mapping the strings and taking out the indexes so that we may be able to analyze further
+        return
       console.log("currentWord:", currentWord)
 
       let vowelsArray = currentWord.split("").filter(vowel => {
