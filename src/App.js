@@ -29,19 +29,35 @@ class App extends Component {
 
       let vowels = ['a','e','i','o','u']
       let array = currentWord.split("")
-      let grade = ['q','u']
+      let grade = ['q', 'u']
+      let q = ['q']
       let word = ""
-
+      
 
       // if (currentWord.indexOf(vowels) || currentWord.indexOf(vowels) === 0 || currentWord.indexOf(vowels)!== 0) {
       if (vowels.includes(array[0])) { // finding word that starts with vowel and adding way
         return `${currentWord}way` 
-      } else if (grade.includes(array[1,2])) {
-        return currentWord.slice(2) + 'ay'
+      } else if (q.includes(array[0])) {
+          if (grade.includes(array[0,1])){
+            return currentWord.slice(2) + 'quay' 
+          }
+      // } else if (array.indexOf(0) !== vowels){
+      //     const firstVowel = (array) => {
+      //       let findVowelIndex = array.map(value =>{
+      //         return value === "a" || value === "e" || value === "i" || value === "o" || value === "u"
+      //       })  
+      //       return findVowelIndex.indexOf(true)
+      //       }
+      //     return firstVowel
+      //     if (firstVowel.indexof(1)){
+      //       return currentWord.slice(2) + 'quay' 
+      // }
+
+      // }
         // trying to find word that begins with consonant and then the index of first vowel
       // } else if (currentWord.charAt(0) === "q" && currentWord.charAt(1) === "U") {
       //   return currentWord.indexOf(vowels, 1) // trying to find first vowel occurance after U in QU
-       }        
+               
 
 // if word index0 = q && index1 = u find .search index of next vowel 
 
